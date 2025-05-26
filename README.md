@@ -1,3 +1,4 @@
+![{4A8561CD-DDB9-43AA-AA1C-0897201F0F10}](https://github.com/user-attachments/assets/2c3db5df-d21d-4d44-ad32-92ab557bbd3c)
 # Video Streaming Platform
 
 Platform streaming video modern yang mendukung berbagai provider video dengan antarmuka yang responsif dan user-friendly.
