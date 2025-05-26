@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "next build"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
@@ -31,5 +32,8 @@
     "eslint-config-next": "14.1.0",
     "typescript": "^5",
     "@tailwindcss/line-clamp": "^0.4.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }
