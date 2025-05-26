@@ -11,9 +11,11 @@ export interface Video {
   thumbnail: string
   duration: string
   category: string
-  provider: 'vidley' | 'doodstream' | 'other'
+  provider: 'vidley' | 'doodstream' | 'fidey' | 'viraltrend' | 'other'
   embedUrl: string
   date: string
+  tags?: string[]
+  content?: string
 }
 
 export async function getAllVideos(): Promise<Video[]> {
@@ -41,11 +43,21 @@ export async function getVideoById(id: string): Promise<Video | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
-    return {
+    const video: Video = {
       id,
-      ...data,
-      content,
-    } as Video
+      title: data.title,
+      description: data.description,
+      thumbnail: data.thumbnail,
+      duration: data.duration,
+      category: data.category,
+      provider: data.provider,
+      embedUrl: data.embedUrl,
+      date: data.date,
+      tags: data.tags,
+      content
+    }
+
+    return video
   } catch (error) {
     return null
   }
